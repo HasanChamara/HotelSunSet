@@ -90,9 +90,9 @@
 							<td><c:out value="${room.id}" /></td>
 							<td><c:out value="${room.number}" /></td>
 							<td><c:out value="${room.type}" /></td>
-							<td><c:out value="${room.noofbeds}" /></td>
+							<td><c:out value="${room.noOfBeds}" /></td>
 							<td><c:out value="${room.wifi}" /></td>
-							<td><c:out value="${room.phoneservice}" /></td>
+							<td><c:out value="${room.phoneService}" /></td>
 						
 							<td>
 							<div class="btn-group">

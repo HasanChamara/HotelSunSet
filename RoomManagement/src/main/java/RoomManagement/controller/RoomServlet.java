@@ -96,7 +96,7 @@ public class RoomServlet extends HttpServlet {
 			throws SQLException, ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		Room existingRoom = roomDAO.selectRoom(id);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("editRoom-form.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Room-Update.jsp");
 		request.setAttribute("room", existingRoom);
 		dispatcher.forward(request, response);
 
@@ -110,6 +110,8 @@ public class RoomServlet extends HttpServlet {
 		int noOfBeds = Integer.parseInt(request.getParameter("noOfBeds"));
 		String wifi = request.getParameter("wifi");
 		String phoneService = request.getParameter("phoneService");
+		
+		
 		Room newRoom = new Room(number,type, noOfBeds,wifi,phoneService);
 		roomDAO.insertRoom(newRoom);
 		response.sendRedirect("list");

@@ -14,9 +14,9 @@ import RoomManagement.bean.Room;
 
 
 public class RoomDAO {
-	private String jdbcURL = "jdbc:mysql://localhost:3306/sunset?useSSL=false"; //127.0.0.1
+	private String jdbcURL = "jdbc:mysql://localhost:3306/hotel?useSSL=false"; //127.0.0.1
 	private String jdbcUsername = "root";
-	private String jdbcPassword = "IT20157296";
+	private String jdbcPassword = "Hasan.2000";
 
 	private static final String INSERT_ROOMS_SQL = "INSERT INTO rooms" + "  (number,type, noOfBeds,wifi,phoneService) VALUES "
 			+ " (?, ?, ?, ?, ?);";

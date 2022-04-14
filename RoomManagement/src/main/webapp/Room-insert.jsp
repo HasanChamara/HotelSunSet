@@ -78,7 +78,7 @@
 				</c:if>
 				
 				<fieldset class="form-group">
-					<label>Number</label> <input type="text"placeholder="Type Room Number here"
+					<label>Room Number</label> <input type="text"placeholder="Type Room Number here"
 						value="<c:out value='${room.number}' />" class="form-control"
 						name="number" required="required">
 				</fieldset>
@@ -88,40 +88,44 @@
 					<label>Room Type</label>
 					<select placeholder="Select the Room Type" name= "type" class="form-control" 
 						value="<c:out value='${room.type}'/>" >
-                                                      
+                               
+                              <option >--SELECT--</option>                        
                               <option >AC</option>
                               <option >Non AC</option>
 					</select>
 				</fieldset>
 				
-				
+	  			
 
 				<fieldset class="form-group">
-					<label>Number Of Beds</label> <input type="text"placeholder="Type number of beds here"
-						value="<c:out value='${room.noOfBeds}' />" class="form-control"
-						name="noOfBeds" required="required">
+					<label>Number Of Beds</label> <input type="number"oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "2"
+						placeholder="Type Number Of Beds here"value="<c:out value='${room.noOfBeds}' />" class="form-control"
+						name="noOfBeds">
 				</fieldset>
 				
-
 				
 				<fieldset class="form-group">
-					<label>WiFi <input type="checkbox" value="<c:out value='${room.wifi}' />" class="form-control"
-						name="yes" required="required">
+					<label>WiFi</label>
+					<select placeholder="Select wifi" name= "wifi" class="form-control" 
+						value="<c:out value='${room.wifi}'/>" >
+                               
+                              <option >--SELECT--</option>                         
+                              <option >Available</option>
+                              <option >Not Available</option>
+					</select>
 				</fieldset>
-
+				
 				
 				<fieldset class="form-group">
-					<label>Import Date</label> <input type="date"
-						value="<c:out value='${stock.importdate}' />" class="form-control"
-						name="importdate" required="required">
+					<label>Phone Service</label>
+					<select placeholder="Select phone service" name= "phoneService" class="form-control" 
+						value="<c:out value='${room.phoneService}'/>" >
+                              
+                              <option >--SELECT--</option>                         
+                              <option >Available</option>
+                              <option >Not Available</option>
+					</select>
 				</fieldset>
-				
-				<fieldset class="form-group">
-					<label>Expire Date</label> <input type="date"
-						value="<c:out value='${stock.expiredate}' />" class="form-control"
-						name="expiredate">
-				</fieldset>
-				
 				
 				
 				<button type="submit" class="btn btn-info">ADD</button>
@@ -129,7 +133,7 @@
 				<br/><br/>
 				<ul class="navbar-nav">
 				<li><a href="<%=request.getContextPath()%>/list"
-					class="btn btn-secondary" class="nav-link">View All Stocks</a></li>
+					class="btn btn-secondary" class="nav-link">View All Rooms</a></li>
 			</ul>
 				
 				</form>
